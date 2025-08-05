@@ -1,13 +1,6 @@
-const map = L.map('map', {
-    globe: {
-        globeTexture: 'https://cdn.jsdelivr.net/npm/leaflet-globe@2.0.1/dist/assets/earth.jpg',
-        globeColor: '#ffffff'
-    }
-}).setView([50.095, 14.77], 10);
+const map = L.map('map').setView([50.095, 14.77], 10);
 
-const satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-    attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
-}).addTo(map);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '© OpenStreetMap'
 }).addTo(map);
@@ -53,7 +46,7 @@ async function recalculateRoute(startPoint) {
         speakInstruction("Nejdříve zadejte platný cíl.");
         return;
     }
-   const osrmUrl = `http://router.project-osrm.org/route/v1/driving/${startPoint.lng},${startPoint.lat};${destination[1]},${destination[0]}?steps=true&alternatives=false&geometries=geojson`;
+    const osrmUrl = `https://router.project-osrm.org/route/v1/driving/${startPoint.lng},${startPoint.lat};${destination[1]},${destination[0]}?steps=true&alternatives=false&geometries=geojson`;
     try {
         const response = await fetch(osrmUrl);
         const data = await response.json();
