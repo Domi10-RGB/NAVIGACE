@@ -46,7 +46,7 @@ async function recalculateRoute(startPoint) {
         speakInstruction("Nejdříve zadejte platný cíl.");
         return;
     }
-    const osrmUrl = `http://router.project-osrm.org/route/v1/driving/${startPoint.lng},${startPoint.lat};${destination[1]},${destination[0]}?steps=true&alternatives=false&geometries=geojson`;
+  const osrmUrl = `https://router.project-osrm.org/route/v1/driving/${startPoint.lng},${startPoint.lat};${destination[1]},${destination[0]}?steps=true&alternatives=false&geometries=geojson`;
     try {
         const response = await fetch(osrmUrl);
         const data = await response.json();
