@@ -1,9 +1,52 @@
 body {
-    margin: 0;
     padding: 0;
+    margin: 0;
 }
-
-#map {
-    height: 100vh;
+html, body, #map {
+    height: 100%;
     width: 100%;
+}
+#controls {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: flex;
+    gap: 10px;
+}
+#destinationInput {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 250px;
+}
+#startNavigation {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+#startNavigation:hover {
+    background-color: #0056b3;
+}
+#instructions {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
 }

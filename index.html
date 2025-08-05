@@ -8,7 +8,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="instructions">Čekám na GPS signál...</div>
+    <div id="controls">
+        <input type="text" id="destinationInput" placeholder="Zadejte cíl (např. 'Praha, Černý Most')">
+        <button id="startNavigation">Navigovat</button>
+    </div>
+    <div id="instructions"></div>
     <div id="map"></div>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/leaflet-geometryutil@0.9.1/src/leaflet.geometryutil.js"></script>
